@@ -1,0 +1,816 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{cite}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{authblk}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\title{\textbf{\Huge Jacobi and Lagrangian formulation of the Classical Cosmological Equations}}
+\author{Riddhiman Bhattacharya FRSA}
+\affil{Fellow of Royal Society of Arts, London, UK\\
+Contact:\url{riddhiman.butai2005@gmail.com}}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+
+    Classical mechanics has been a well-established field for many years, but there are still some challenges that can be addressed using modern techniques. When dealing with classical mechanics problems, the first step is usually to create a mathematical expression called the Hamiltonian based on a known function called the Lagrangian. This involves using standard procedures to establish relationships like the Poisson bracket, canonical momenta, Euler-Lagrange equations, and Hamilton-Jacobi relations. In this paper, we focus on a specific problem related to the calculus of variations, which deals with finding the Lagrangian function that, when used in the Euler-Lagrange equation, produces a given differential equation. To tackle this problem, we employ two distinct methods to determine the Lagrangian and, subsequently, the Hamiltonian for the cosmological equations derived from General Relativity. These equations describe the motion of celestial objects in the universe and are of second-order in nature.
+\end{abstract}
+\section{Introduction}
+The Hamiltonian and Lagrangian frameworks, which have evolved from Newtonian mechanics, hold significant importance in both the fields of physics and mathematics. These two distinct yet elegant approaches provide deep insights into the mathematical foundations underlying our physical universe.\\
+The Hamiltonian description of any system is characterized by a Hamiltonian denoted as "H" and a Poisson bracket that adheres to the Jacobi identity. The conventional process for Hamiltonian and Lagrangian dynamics typically involves starting with knowledge of the system's Lagrangian. From there, various key components are derived or constructed, including the Euler-Lagrange equations of motion, canonical momenta, Poisson bracket relations, the Hamiltonian itself, and the Hamilton-Jacobi relations.
+The primary objective of this thesis is to address the inverse problem in the calculus of variations, as described by \cite{hojman2014construction}, which poses the question: Given a set of second-order differential equations
+\begin{equation}
+\ddot{q}^{i}=f^{i}(q, \dot{q}, t) \quad i=1, \ldots, n
+\label{1}
+\end{equation}
+\begin{enumerate}
+    \item Does there exist a Lagrangian that yields \textbf{Euler-Lagrange equations} equivalent to \eqref{1}?
+    \item If yes, how can we find all these Lagrangians?
+\end{enumerate}
+
+We present two distinct approaches to tackle this problem. In both approaches, our initial step involves determining the Lagrangian for the cosmological equations using two specific methods. Subsequently, we proceed to obtain the corresponding Hamiltonian through a process known as \textbf{Legendre transformation}.
+\newline 
+The cosmological equations are first derived from the \textbf{Einstein's field equations(EFE)}. The general form of Einstein's field equations is:
+\begin{equation}
+G_{\mu \nu}+\Lambda g_{\mu \nu}=k T_{\mu \nu}
+\end{equation}
+where $\Lambda$ and $k$ are two undetermined constants. The constant $k$ is determined by ensuring that Newton's gravitational field equation is correctly reproduced, while $\Lambda$ remains arbitrary. The specific value of $k$ is found to be equal to $\frac{8 \pi G}{c^{4}}$.
+The Einstein tensor $G_{\mu \nu}$ is defined as follows: :
+\begin{equation}
+G_{\mu \nu}=R_{\mu \nu}-\frac{1}{2} R g_{\mu \nu}
+\end{equation}
+Hence, EFE can be written(in tensor form) as:
+\begin{equation}
+R_{\mu \nu}-\frac{1}{2} R g_{\mu \nu}+\Lambda g_{\mu \nu}=\frac{8 \pi G}{c^{4}} T_{\mu \nu}
+\end{equation}
+where $R_{\mu \nu}$ is the Ricci curvature tensor, R is the scalar curvature, $g_{\mu \nu}$ is the metric tensor, $\Lambda$ is the cosmological constant, $G$ is Newton's gravitation constant, $T_{\mu \nu}$ is the stress-energy tensor, and $c$ is the speed of light in vacuum. Einstein's field equations are a set of symmetric 4$\times$ 4 tensors each having 10 components.\\
+Originally, Albert Einstein's equations of General Relativity did not include the cosmological constant $\Lambda$. However, he later introduced this constant into his equations to achieve static cosmological solutions for understanding the large-scale behavior of the universe. Subsequently, observations of the universe's expansion in later years, as documented in references such as \cite{Riess_1998} and \cite{Perlmutter_1999}, indicated that the cosmological constant was not necessary. However, recent astronomical observations have suggested that while the cosmological constant is indeed small, it is not precisely zero, as discussed in \cite{Bousso_2007}. 
+
+\subsection{Approach 1:Obtaining Lagrangian and Hamiltonian  using a one-time independent constant of motion}
+The method described here was initially proposed by Hojman in his work \cite{hojman2014construction}. In this particular approach, we begin with the equations of motion and a single time-independent constant of motion. Using these two fundamental components, we proceed to construct various key elements, including a Hamiltonian, Poisson bracket relations, a Lagrangian, canonical momentum, the Hamilton-Jacobi equation, and ultimately, the second constant of motion. \\
+Let's consider a system $S^{1}_{2 n}$ of 2n first order differential equations for $2n$ variables $x^{a}$ ,
+\begin{equation}
+\dot{x}^{a}=f^{a}\left(x^{b}\right), \quad a, b=1,2,3, \ldots, 2 n
+\end{equation}
+We proceed to determine the Lagrangian that fulfills the aforementioned differential equation, thereby solving the inverse problem within the calculus of variations framework. In this approach, we've made the specific choice of setting the Hamiltonian as the time-independent constant of motion. It is demonstrated that when a time-independent constant of motion, denoted as $C_{1}$, is known for a given system, the Hamiltonian structure can be established by selecting the Hamiltonian as $H=C_{1}$. To illustrate this concept, we consider a general second-order system as an example for deriving the Hamiltonian structure.
+\begin{equation}
+\ddot{q}=F(q) G(\dot{q})
+\end{equation}
+This approach for the second-order system is then applied to the well-known cosmological equations and hence the Lagrangian and Hamiltonian structure is worked out in details.
+
+\subsection{\textit{Approach 2:Obtaining Lagrangian using Jacobi Last Multiplier}}
+
+It is a well-established fact that a Lagrangian can always be found for any second-order equation. However, what's less commonly known is that the Jacobi Last Multiplier, when known, can be employed to derive such a Lagrangian. This process effectively allows us to solve the inverse problem within the calculus of variations, as discussed in \cite{hojman2014construction}. This approach is applicable to numerous second-order ordinary differential equations, which often take the following form:
+\begin{equation}
+\ddot{x}=F(t, x, \dot{x})
+\end{equation} 
+can be described through a Lagrangian formulation due to the presence of Jacobi's Last Multiplier. Jacobi's Last Multiplier is a solution to a linear partial differential equation, as detailed in \cite{2008PhyS...78f5011N}: 
+\begin{equation}
+\frac{\mathrm{d} \log M}{\mathrm{d} t}+\sum_{i=1}^{n} \frac{\partial\left(a_{i}\right)}{\partial x_{i}}=0
+\end{equation}
+where $\partial_{t}+\sum_{i=1}^{n} a_{i} \partial_{x_{i}}$ is the vector field of the partial differential equation
+\begin{equation}
+A f=\frac{\partial f}{\partial t}+\sum_{i=1}^{n} a_{i}\left(x_{1}, \ldots, x_{n}\right) \frac{\partial f}{\partial x_{i}}=0
+\end{equation}
+After determining the Lagrangian for the system, the next step is to compute the Hamiltonian (H) using the well-established Legendre transformation.
+\begin{equation}
+\mathcal{H}=\sum_{i} \dot{q}^{i} \frac{\partial \mathcal{L}}{\partial \dot{q}^{i}}-\mathcal{L}
+\end{equation}
+The Jacobi Last Multiplier is a valuable tool for finding the Lagrangian of a second-order system. In recent years, it has also been employed to derive the first integral for first-order ordinary differential equations[ODE].\\
+In the following chapters, we'll provide a detailed derivation of two cosmological equations using two different approaches: one based on \textbf{classical laws} and the other based on \textbf{Einstein's General Theory of Relativity}. We'll explain how to obtain the Hamiltonian using approach \ref{App-1} in chapter \ref{III} and will also apply this to cosmological equations for the state of matter called dust. In chapter \ref{IV}, we'll go through the process of obtaining Lagrangian using Jacobi's method and apply this method to obtain Lagrangian for cosmological equation(for dust case). The comparison of the Lagrangian and Hamiltonian obtained from the two approaches will be done in the \ref{Con}.
+\section{Cosmological Equations}\label{II}
+
+Over the past few decades, there has been significant progress in our understanding and description of the universe. The fundamental questions concerning the evolution of the entire universe were first explored and analyzed by Friedmann in 1922, as referenced in \cite{garcia-bellido_evolution_universe, soloviev_friedmann_einstein}. At that time, Albert Einstein's General Theory of Relativity was already available, and Friedmann used this theory to derive a set of equations that characterized the shape, properties, and evolution of the universe. This groundbreaking work revealed that the universe was not static, contrary to previous beliefs.
+In 1934, Milne and McCrea made a noteworthy contribution by demonstrating that nearly the same equations as those derived by Friedmann using General Relativity could also be obtained through the application of Newtonian mechanics, as noted in \cite{ec3dce9b-606e-3531-a56c-89ea944f0c69, 10.1093/qmath/os-5.1.73, NEU, McCREA1955}. This finding highlighted the versatility of different theoretical frameworks in explaining the behavior of the cosmos.
+Central to the foundation of modern cosmology is the \textbf{Cosmological Principle}, which statess that:\\
+\textit{\textbf{The universe is homogeneous(means there is no preferred observing position in the universe) and isotropic(means there is no difference in structure of the universe as looked in different directions) on the large enough scales.}}\\ 
+An extension of the cosmological principle is the \textit{\textbf{Perfect Cosmological Priciple}} which states that in addition to being homogenous and isotropic, the universe also does not change with time; there is no evolution. Therefore in an expanding universe new matter must be continually created to account for the change in size. \\
+There are two methods to derive the cosmological equations- 
+\begin{enumerate}
+    \item Using Newtonian Mechanics
+    \item Using Einstein's equations of General Relativity
+\end{enumerate}
+ We'll derive it by both methods.
+\subsection{Using Newtonian Mechanics}
+
+We're aware that the universe is getting bigger, so we have to distinguish between how objects move relative to other objects in space and how they move because the entire universe is expanding. The Cosmological Principle suggests that no matter where one is in the universe, one can imagine an observer who sees the universe as the same in all directions and uniform. These observers are known a \textbf{co-moving observers}, and we can define a \textbf{co-moving coordinate system}, in which these observers remain at rest; this means that co-moving coordinates are expanding along with the universe. The proper distance $\mathbf{r}$ is the distance between two regions of space at a constant cosmological time. As the universe expands, the proper distance between two co-moving observers increases over time.  By definition, the co-moving distance between two co-moving regions of space remains fixed at all times. It is related to the proper distance as follows : 
+\begin{equation}
+\mathbf{r}(t)=a(t) \mathbf{x}
+\end{equation}
+where $\mathbf{r}$ is called the proper coordinate, $\mathbf{x}$ is called the co-moving coordinate and $a(t)$ is the scale factor. So, relative velocity between two points is
+\begin{equation*}
+\begin{aligned} 
+\mathbf{v}_{21} &=\frac{d}{d t}\left(\mathbf{r}_{2}-\mathbf{r}_{1}\right) \\ &=\dot{a}\left(\mathbf{x}_{2}-\mathbf{x}_{1}\right) \\ &=\frac{\dot{a}}{a}\left(\mathbf{r}_{2}-\mathbf{r}_{1}\right) 
+\end{aligned}
+\end{equation*} 
+By generalizing this formula between any two points, and defining the \textit{Hubble’s parameter} $H(t)=\frac{\dot{a}}{a}$ , we get the Hubble's law:
+\begin{equation}
+\mathbf{v}=H(t) \mathbf{D}
+\end{equation}
+Now, let's imagine a sphere of uniform density $\rho(t)$, with a radius $R$. This sphere is assumed to expand according to the scale factor $a$, therefore we can define a co-moving radius $X_{R}$, and the radius of the sphere as a function of time is
+\begin{equation}
+R(t)=X_{R} a(t)
+\end{equation}
+We consider a sphere that behaves according to Newton's laws of motion, where every point on the sphere is subject to gravitational attraction from all other points. However, because the entire system only has one degree of freedom, which is the scale factor, we can use the equation of motion for a single point to understand how the entire system evolves. To illustrate this, let's take a small mass $m_{p}$ positioned at a co-moving distance $x_{p}$ from the center. The potential energy $E_{p}$ is
+\begin{equation*}
+E_{p}=-\frac{G M_{p} m_{p}}{r_{p}}
+\end{equation*}
+where $M_{p}$ is the mass contained in a sphere of radius $r_{p}$ :
+\begin{equation*}
+M_{p}=\frac{4}{3} \pi \rho r_{p}^{3}
+\end{equation*}
+The resulting potential energy is:
+\begin{equation*}
+E_{P}=-\frac{4}{3} \pi \rho G m_{p} r_{p}^{2}
+\end{equation*}
+The kinetic energy is 
+\begin{equation*}
+E_{K}=\frac{1}{2} m_{p} \dot{r}_{p}^{2}=\frac{1}{2} m_{p} \frac{\dot{a}^{2}}{a^{2}} r_{p}^{2}
+\end{equation*} 
+From the law of conservation of energy[COE],
+\begin{equation*}
+E_{t o t}=E_{P}+E_{K}
+\end{equation*}
+therefore,
+\begin{equation*}
+E_{t o t}=-\frac{4}{3} \pi \rho G m_{p} r_{p}^{2}+\frac{1}{2} m_{p} \dot{r}_{p}^{2}
+\end{equation*}
+Isolating the derivative of a
+\begin{equation}
+\left(\frac{\dot{a}}{a}\right)^{2}=\frac{8 \pi G}{3} \rho+\frac{2}{m_{p} r_{p}^{2}} E_{t o t}
+\end{equation}
+Differentiating the potential energy gives the force on the mass
+\begin{equation}
+F_{p}=-\frac{d E_{P}}{d r}=\frac{8}{3} \pi \rho G m_{p} r_{p}
+\end{equation}
+Einstein thought that the universe was static and, end therefore introduced a second force that could counteract the non zero acceleration, for all $r_{p}$, and a non-empty universe. Since this force had to be of the right intensity at all r, its form is bound to have the same dependence on the radius as the gravitational force, leading to a potential energy of this form:
+\begin{equation}
+E_{\Lambda}=\text { const } \times r_{p}^{2}=-m \frac{\Lambda c^{2}}{6} r_{p}^{2}
+\end{equation}
+where the dependence on $m$ is obliged by the condition that all forces and accelerations in the previous formulas are proportional to it, while the various constants are due to the relativistic derivation of the same concept. The total energy is rewritten as 
+\begin{equation}
+E_{t o t}=-\frac{m_{p} r_{p}^{2}}{2} \frac{K c^{2}}{6 a^{2}}
+\end{equation}
+Hence, with the added term for cosmological constant and new definitions, we can write the \textbf{First Friedmann Equation} as:
+\begin{equation}
+\left(\frac{\dot{a}}{a}\right)^{2}=\frac{8 \pi G}{3} \rho-\frac{K c^{2}}{a^{2}}+\frac{\Lambda c^{2}}{3}
+\label{18}
+\end{equation}
+This equation needs to be solved for two functions: $a(t)$ and $\rho(t)$. The Newtonian model provides an equation for $\rho(t)$: Since the mass in the sphere is always the same, as the sphere expands the density decreases, with a relation that is the inverse of the increment in volume. Therefore 
+$\rho \propto \frac{1}{a^{3}}$ and differentiating  with respect to time gives:
+\begin{equation}
+\dot{\rho} \propto-3 \frac{\dot{a}}{a^{2}}
+\end{equation}
+dividing the equation for $\dot{\rho}$ and $\rho$ gives:
+\begin{equation}
+\dot{\rho}=-3 H \rho
+\label{20}
+\end{equation}
+Now, multiplying \eqref{18} by $a^2$ and differentiating w.r.t time,
+\begin{equation*}
+2\dot{a}\ddot{a}=\frac{8 \pi G}{3}\left(\dot{\rho}a^{2}+ 2\dot{a}a \rho\right)+\frac{\Lambda c^{2}}{3} 2\dot{a}a
+\end{equation*}
+dividing by $2\dot{a}a$, we get the \textbf{Second Friedmann Equation} 
+\begin{equation}
+\frac{\ddot{a}}{a}=-\frac{8 \pi G}{6} \rho+\frac{\Lambda c^{2}}{3}
+\end{equation}
+Hence, the final two {Friedmann equations} are:
+\begin{equation}
+\left(\frac{\dot{a}}{a}\right)^{2}=\frac{8 \pi G}{3} \rho-\frac{K c^{2}}{a^{2}}+\frac{\Lambda c^{2}}{3}
+\end{equation}
+\begin{equation}
+\frac{\ddot{a}}{a}=-\frac{8 \pi G}{6} \rho+\frac{\Lambda c^{2}}{3}
+\end{equation}
+
+\subsection{Using Einstein's equations:} 
+The key notion of General relativity is that \textit{the presence of mass/energy determines the geometry of space and the geometry of space determines the motion of mass/energy.} Einstein’s general theory of relativity is a geometric theory of gravity— gravitational phenomena are attributed as reflecting the underlying curved spacetime. An invariant (with respect to coordinate transformations) interval is related to coordinates of the spacetime manifold through the metric in the form of:
+\begin{equation}
+d s^{2}=g_{\mu \nu} d x^{\mu} d x^{\nu}
+\label{MT}
+\end{equation}
+The Greek indices range over (0, 1, 2, 3) with $x^{0} = ct$ and the metric  $g_{\mu \nu}$ is a 4 $\times$ 4 matrix.\\
+We study the universe that follows from the cosmological principle \cite{Schwarz_2009}. The cosmological principle states that: \textit{at each epoch (i.e. each fixed value of cosmological time $t$) the universe is homogeneous and isotropic. It presents the same aspects (except for local irregularities) from each point.} Due  to  the symmetries that this principle implies, we can set a cosmological time  which allows us to have a reference time to study the universe dynamics.\\
+Now, the field equation in Newton’s theory of gravity, when written in terms of the gravitational potential $\phi(x)$, is given by:
+\begin{equation}
+\nabla^{2} \phi=4 \pi G \rho
+\label{New}
+\end{equation}
+where $\rho$ is the density of mass and $G$ is the Newton's constant. The
+Newtonian theory is not a dynamic field theory as it does not provide a description of time evolution. Namely, it is the static limit of some field theory, and thus has no field propagation. The Newtonian equation of motion is
+\begin{equation}
+\frac{d^{2} \mathbf{r}}{d t^{2}}=-\nabla \Phi
+\label{RS}
+\end{equation}
+Einstein in his theory of gravity, obtained the relativistic generalizations of equations \eqref{New} and \eqref{RS}. In the theory of relativity, space and time are considered equally important, and a successful application of relativistic principles naturally leads to a dynamic theory. Einstein's field equations, which describe the gravitational interactions in general relativity, can be expressed as \cite{narlikar_hoyle_cosmology}
+\begin{equation}
+G_{\mu \nu}+\Lambda g_{\mu \nu}=k T_{\mu \nu}
+\end{equation}
+where $\Lambda$ and $k$ are undetermined constants.The constant $k$ is determined by demanding that Newton's gravitational field equation comes out right but $\Lambda$ remains arbitrary.The value of $k$ comes out to be  $\frac{8 \pi G}{c^{4}}$\\
+The Einstein's tensor $G_{\mu \nu}$ is defined as:
+\begin{equation}
+G_{\mu \nu}=R_{\mu \nu}-\frac{1}{2} R g_{\mu \nu}
+\end{equation}
+Hence, EFE can be written(in tensor form) as:
+\begin{equation}
+R_{\mu \nu}-\frac{1}{2} R g_{\mu \nu}+\Lambda g_{\mu \nu}=\frac{8 \pi G}{c^{4}} T_{\mu \nu}
+\label{Einstein}
+\end{equation}
+where $R_{\mu \nu}$ is the Ricci curvature tensor, R is the scalar curvature, $g_{\mu \nu}$ is the metric tensor, $\Lambda$ is the cosmological constant, $G$ is Newton's gravitation constant, $T_{\mu \nu}$ is the stress-energy tensor, and $c$ is the speed of light in vacuum. The Einstein's field equations are a set of symmetric 4$\times$ 4 tensors each having 10 components. The equations are nonlinear, but they have a well-posed initial-value structure – that is, they determine future values of $g_{\mu \nu}$ from given initial data. However, one point must be made: since $g_{\mu \nu}$ are the components of a tensor in some coordinate system, a change in coordinates induces a change in them. In particular, there are four coordinates, so there are four arbitrary functional degrees of freedom among the ten $g_{\mu \nu}$. It should be impossible, therefore, to determine all ten $g_{\mu \nu}$ from any initial data, since the coordinates to the future of the initial moment can be changed arbitrarily. In fact, Einstein’s equations have exactly this property: the Bianchi identities
+\begin{equation}
+G_{ ; \nu}^{\mu \nu}=0
+\end{equation}
+ in  Einstein  tensor $G_{\mu \nu}$  there  is  a  Ricci-tensor  and  a  Ricci  escalar. The metric with we'll calculate them is the one that we need to particularise our final expressions  for the homogeneous and isotropic universe. Therefore,  now  we've  to  find a metric $g_{\mu \nu}$ such that it includes all the different aspects of the cosmological principle. This metric is known as Robertson-Walker metric:
+\begin{equation}
+\mathrm{d} s^{2}=c^{2} \mathrm{d} t^{2}-a^{2}(t)\left[\frac{\mathrm{d} r^{2}}{1-k r^{2}}+r^{2}\left(\mathrm{d} \theta^{2}+\sin ^{2} \theta \mathrm{d} \phi^{2}\right)\right]
+\end{equation}
+The Robertson-Walker metric describes an isotropic universe because it does not have crossed terms between time and space so there is not any privileged direction \cite{narlikar_hoyle_cosmology}. And it also describes the homogeneous universe because of the spherical symmetry. The factor $a(t)$ is called the scale factor and is the temporal dependence between the relative distance of two points of the universe. The scale factor is defined to be 1 at the present time. The parameter $k$ specifies the curvature of space. For the flat space, it's value is $0$. It can take three values-$+1$, $-1$ or $0$. From now on , the time dependence of the scale factor can be implicit, so $a(t)\equiv a$. \\
+We need the Ricci tensor and Ricci scalar to particularise Einstein's equations for a homogeneous and isotropic universe. First we calculate the components of metric tensor and then substitute them in Christoffel symbol formula which is
+\begin{equation}
+\Gamma_{j i}^{l}=\frac{1}{2} g^{l m}\left(\frac{\partial g_{m i}}{\partial x^{j}}+\frac{\partial g_{m j}}{\partial x^{i}}-\frac{\partial g_{i j}}{\partial x^{m}}\right)
+\end{equation}
+We'll then use it to get the Riemann tensor which is connected to the Christoffel symbol as:
+\begin{equation}
+R_{k j i}^{l} = \frac{\partial \Gamma_{k j}^{l}}{\partial x^{i}}-\frac{\partial \Gamma_{k i}^{l}}{\partial x^{j}}+\Gamma_{k j}^{m} \Gamma_{m i}^{l}-\Gamma_{k i}^{m} \Gamma_{m j}^{l}
+\end{equation}
+\subsubsection{Calculating metric tensor:}
+The metric tensor $g_{i j}$ is a function that tells us how to compute the distance between any two points in a given space.  Its components can be viewed as multiplication factors which must be placed in front of the differential displacements $dx_{i}$ in a generalized Pythagorean theorem:
+\begin{equation}
+d s^{2}=g_{11} d x_{1}^{2}+g_{12} d x_{1} d x_{2}+g_{22} d x_{2}^{2}+\ldots .
+\end{equation}
+In Euclidean space,$g_{i j}=\delta_{i j}$. Now, for the Robertson-Walker metric, we set :
+\begin{align*}
+x^{0}&=ct &  x^{1}&=r &  x^{2}&=\theta &  x^{3}&=\phi
+\end{align*}
+The non-zero components of metric tensor $g_{i k}$ and $g^{i k}$ using equation \eqref{MT} can be calculated as :
+\begin{equation}
+g_{00}=1, \quad g_{11}=-\frac{a^{2}}{1-k r^{2}}, \quad g_{22}=-a^{2} r^{2}, \quad g_{33}=-a^{2} r^{2} \sin ^{2} \theta
+\label{35}
+\end{equation}
+\begin{equation}
+g^{00}=1, \quad g^{11}=-\frac{1-k r^{2}}{a^{2}}, \quad g^{22}=-\frac{1}{a^{2} r^{2}},  g^{33}=-\frac{1}{a^{2} r^{2} \sin ^{2} \theta}
+\end{equation}
+Next, we'll calculate the \textbf{Christoffel symbols of Robertson-Walker metric}:
+\subsubsection{Calculating Christoffel Symbols:}
+Robertson-Walker metric is diagonal and has a symmetric connection,  so the majority of  the Christoffel symbols will be symmetric or null. The non zero components of $\Gamma_{j i}^{l}$ are :
+\begin{align*}
+\Gamma_{01}^{1}&=\Gamma_{02}^{2}=\Gamma_{03}^{3}=\frac{1}{c} \frac{\dot{a}}{a}
+\end{align*}
+\begin{align*}
+\Gamma_{11}^{0}&=\frac{a \dot{a}}{c\left(1-k r^{2}\right)} &  \quad \Gamma_{22}^{0}&=\frac{a \dot{a} r^{2}}{c} &  \quad \Gamma_{33}^{0}&=\frac{a \dot{a} r^{2} \sin ^{2} \theta}{c}
+\end{align*}
+\begin{align*}
+\Gamma_{11}^{1}&=\frac{k r}{1-k r^{2}} &  \quad \Gamma_{12}^{2}&=\Gamma_{13}^{3}=\frac{1}{r}
+\end{align*}
+\begin{align*}
+\Gamma_{22}^{1}&=-r\left(1-k r^{2}\right) &  \quad \Gamma_{33}^{1}&=-r\left(1-k r^{2}\right) \sin ^{2} \theta
+\end{align*}
+\begin{align*}
+\Gamma_{33}^{2}&=-\sin \theta \cos \theta &  \quad \Gamma_{23}^{3}&=\cot \theta
+\end{align*} 
+\subsubsection{Calculating Riemann tensor:}
+Riemann tensor is defined as:
+\begin{equation}
+R_{k j i}^{l} = \frac{\partial \Gamma_{k j}^{l}}{\partial x^{i}}-\frac{\partial \Gamma_{k i}^{l}}{\partial x^{j}}+\Gamma_{k j}^{m} \Gamma_{m i}^{l}-\Gamma_{k i}^{m} \Gamma_{m j}^{l}
+\label{37}
+\end{equation}
+\textbf{Ricci Tensor $R_{k i}$ is the contraction of the Riemann tensor}:
+\begin{equation}
+R_{k i} \equiv R_{k j i}^{l}
+\end{equation}
+and \textbf{Ricci scalar $R$ is the contraction of Ricci tensor}:
+\begin{equation}
+R=g^{i k} R_{i k}
+\end{equation} 
+So, we'll calculate only those components of the Riemann tensor which have the same top index as the middle bottom one. These components are enough to calculate Ricci tensor.
+\begin{equation}
+R_{0 0}=R_{t m t}^{m}=R_{t r l}^{r}+R_{t \theta t}^{\theta}+R_{t \phi t}^{\phi}= \frac{3}{c^{2}} \frac{\ddot{a}}{a}
+\end{equation}
+\begin{equation}
+R_{1 1}=R_{2 2}=R_{3 3}=\frac{1}{c^{2}}\left(\frac{\ddot{a}}{a}+\frac{2 \dot{a}^{2}+2 k c^{2}}{a^{2}}\right)
+\end{equation}
+Finally, we can write Ricci Scalar as:
+\begin{equation}
+R=g^{i k} R_{i k} = \frac{6}{c^{2}}\left(\frac{\ddot{a}}{a}+\frac{\dot{a}^{2}+k c^{2}}{a^{2}}\right)
+\end{equation} 
+\subsubsection{Energy-momentum tensor $T_{\mu \nu}$:}
+We can conceptualize the universe as being filled with perfect fluid, as this type of fluid adheres to the cosmological principle. A perfect fluid, by definition, is isotropic, which means that it appears the same in every direction we can observe. Consequently, the macroscopic speed of this fluid doesn't favor any particular direction; it only has a component related to time. i.e $u^{\alpha}=(1,0,0,0)$. The explicit expression for the energy-momentum tensor is:
+\begin{equation}
+T_{\mu \nu}=(\rho+p) u_{\mu} u_{\nu}-p g_{\mu \nu}
+\label{43}
+\end{equation}
+where $u_{\alpha}$ is the macroscopic speed of the medium. Now we can find the energy-momentum tensor for a perfect fluid. It has only diagonal components:
+\begin{align*}
+T_{t t}&=\rho g_{t t} &  T_{i i}&=-p g_{i i}
+\end{align*}
+Now, we've calculated all the components of Einstein's equation. So now, we've to plug all the elements into Einstein's Equations \eqref{Einstein}. The only equations that will be different from the null ones are those that have the same indexes since our metric is diagonal \cite{narlikar_hoyle_cosmology}. Therefore, we start with the temporal part.
+\begin{equation}
+R_{t t}-\frac{1}{2} R g_{t t}-\Lambda g_{t t}=8 \pi G \rho u_{t} u_{t}
+\label{44}
+\end{equation}
+\begin{equation}
+-3 \frac{\ddot{a}}{a}+3 \frac{\ddot{a}}{a}+3\left(\frac{\dot{a}}{a}\right)^{2}+3 \frac{1}{K^{2} a^{2}}-\Lambda=8 \pi G \rho(t)\label{45}
+\end{equation}
+Rearranging the terms,
+\begin{equation}
+\left(\frac{\dot{a}(t)}{a(t)}\right)^{2}=\frac{8 \pi G}{3} \rho(t)+\frac{\Lambda}{3}-\frac{1}{K^{2} a^{2}(t)}
+\label{Eqsub}
+\end{equation}
+This is the \textit{first Friedmann equation}. We'll now take the spatial part:
+\begin{equation}
+R_{i i}-\frac{1}{2} R g_{i i}-\Lambda g_{i i}=8 \pi G(-p) g_{i i}
+\label{47}
+\end{equation}
+therefore,
+\begin{equation}
+-\frac{\ddot{a}}{a}-2\left(\frac{\dot{a}}{a}\right)^{2}-\frac{2}{K^{2} a^{2}}+3 \frac{\ddot{a}}{a}+3\left(\frac{\dot{a}}{a}\right)^{2}+\frac{3}{K^{2} a^{2}}-\Lambda=-8 \pi G p
+\label{48}
+\end{equation}
+or,
+\begin{equation}
+\frac{\ddot{a}(t)}{a(t)}+\frac{1}{2}\left(\frac{\dot{a}(t)}{a(t)}\right)^{2}=-4 \pi G p+\frac{\Lambda}{2}-\frac{1}{2} \frac{1}{K^{2} a^{2}(t)}
+\label{Eqn}
+\end{equation}
+Now we do 2$\times$\eqref{Eqn}- \eqref{Eqsub}, we get:
+\begin{equation}
+\frac{\ddot{a}(t)}{a(t)}=-\frac{4 \pi G}{3}(\rho(t)+3 p)+\frac{\Lambda}{3}
+\end{equation}
+This is the \textit{second Friedmann equation}.\\
+Therefore, in the derivation of Friedman equations, whether in the framework of relativity or Newtonian physics, we've obtained dynamic expressions that describe a universe that is non-static, isotropic, and homogeneous under general conditions.
+
+\section{Construction of Lagrangian and Hamiltonian structure using time-independent constant of motion}\label{III}
+In this section, we're going to understand in detail how can we write the Lagrangian and Hamiltonian structure for a system  starting from just one time independent constant of motion \cite{hojman2014construction}.
+\newline
+Consider a system of 2$n$ first order differential equations for 2n variables $x^{a}$,
+\begin{equation}
+\dot{x}^{a}=f^{a}\left(x^{b}\right), \quad a, b=1,2,3, \ldots, 2 n
+\end{equation}
+The Hamiltonian structure for the system consists of Hamiltonian(H), a Poisson Bracket relation which can be described in terms of a matrix called Poisson Bracket matrix $J^{a b}$. Poisson Bracket can be written in the following form for defining $J$ \cite{goldstein1980classical}
+\begin{equation}
+\{F,G\}=\frac{\partial F} {\partial z^{i}} J^{i j}\frac{ \partial G}{\partial z^{j}} 
+\end{equation}
+where,
+\begin{equation}
+J=\left( \begin{array}{rr}{0} & {I} \\ {-I} & {0}\end{array}\right)
+\end{equation}
+where $I$ is the 3$N$ dimensional unit matrix. The significance of \eqref{New} is that the Poisson Bracket relation is covariant under arbitrary transformations of the phase coordinates $z^{i}$ \cite{article}, that is if
+\begin{equation}
+\overline{z}^{i}=\overline{z}^{i}(z)
+\end{equation}
+are new coordinates, $\overline{F}(\overline{z})$ is the function $F(z)$ expressed in the new coordinates,and
+\begin{equation}
+\overline{J}^{i j}=\frac{\partial \overline{z}^{i}}{\partial z^{m}}{J}^{m n}\frac{\partial \overline{z}^{j}}{\partial z^{n}}
+\end{equation}
+transforms as rank-two contravariant tensor.And since the Poisson bracket follows the anti-symmetric property and Jacobi identity \cite{article},
+\begin{equation}
+J^{i j}=-J^{j i}
+\end{equation}
+and
+\begin{equation}
+J^{i m}\frac{\partial J^{j k}}{ \partial z^{m}} + J^{j m}\frac{\partial J^{k i}}{ \partial z^{m}} + J^{k m}\frac{\partial J^{i j}}{ \partial z^{m}} = 0
+\end{equation}
+changing the indices from $i$, $m$, $j$, $k$ to $c$, $d$, $a$, $b$ and writing the above expression in compressed form,
+\begin{equation}
+J_{, d}^{a b} J^{d c}+J_{, d}^{b c} J^{d a}+J_{, d}^{c a} J^{d b} \equiv 0
+\end{equation}
+this is the well-known Jacobi identity for the Poisson bracket matrix. Hence, Hamilton equations can be written as:
+\begin{equation}
+f^{a}\left(x^{c}\right)=J^{a b} \frac{\partial H}{\partial x^{b}} \equiv\left[x^{a}, H\right]
+\end{equation}
+When we've the knowledge of the Lagrangian for a system, we can readily derive its Hamiltonian structure, including canonical momenta, the Hamiltonian itself, and the Poisson Bracket relations. However, if either the Lagrangian is unknown or does not exist for a given system, we can't apply the conventional methods.
+In this section, we introduce a novel approach for constructing the Hamiltonian structure of a second-order system, where the presence of a single constant of motion enables us to establish both the Hamiltonian and Lagrangian structures. Furthermore, this method allows us to completely solve the problem. We apply this innovative approach to determine the Lagrangian and Hamiltonian for the cosmological equations derived in the previous section.
+
+\subsection{Construction of Hamiltonian Structure}\label{App-1}
+Let us consider a system of two first ODEs for two variables $x^{a}$ 
+\begin{equation}
+\dot{x}^{a}=f^{a}\left(x^{b}\right) . \quad a, b=1,2
+\end{equation}
+We assume that one-time independent constant of motion $C_{1}(x^{b})$ is known. Then, this constant satisfies the following equation:
+\begin{equation}
+\frac{\partial C_{1}}{\partial x^{a}}\dot{x}^{a}=0
+\end{equation}
+i.e
+\begin{equation}
+\frac{\partial C_{1}}{\partial x^{a}} f^{a}\left(x^{b}\right) \equiv 0 . \quad a, b=1,2
+\end{equation}
+Constructing the Hamiltonian structure for the system requires the knowledge of Hamiltonian(H) and Poisson bracket matrix $J^{a b}$.In two dimensions there is essentially one anti-symmetric matrix, hence
+\begin{equation}
+J^{a b}=\left( \begin{array}{cc}{0} & {\mu\left(x^{b}\right)} \\ {-\mu\left(x^{b}\right)} & {0}\end{array}\right)
+\end{equation}
+The function $\mu(x^{b})$ is determined by Hamilton's equations condition
+\begin{equation*}
+f^{a}\left(x^{c}\right)=J^{a b} \frac{\partial H}{\partial x^{b}}
+\end{equation*}
+If we choose $H=C_{1}$,
+\begin{equation}
+f^{a}\left(x^{c}\right)=J^{a b} \frac{\partial C_{1}}{\partial x^{b}}
+\end{equation}
+Now due to \eqref{35} the gradient of $C_{1}$ is perpendicular to $f$, therefore 
+$J^{a b} \frac{\partial C_{1}}{\partial x^{b}}$ is parallel to $f^{a}$ in 2-dimensional space. Thus \eqref{37} determines the function $\mu(x^{b})$ uniquely. Hence, if a time-independent constant of motion $C_{1}(x^{b})$ is known, the Hamiltonian structure is defined by choosing the time-independent constant as the Hamiltonian, and the Poisson Bracket matrix is completely determined by Hamilton's equation conditions.
+
+\subsection*{Construction of Lagrangian Structure}
+Suppose $(q_{1}, q_{2},....q_{n},(p_{1}, p_{2},....p_{n})$ are the canonical coordinates on a phase space. If each of them is expressed as a function of $u$ and $v$, then the Lagrange bracket of $u$ and $v$ is defined as,
+\begin{equation}
+[u, v]_{p, q}=\sum_{i=1}^{n}\left(\frac{\partial q_{i}}{\partial u} \frac{\partial p_{i}}{\partial v}-\frac{\partial p_{i}}{\partial u} \frac{\partial q_{i}}{\partial v}\right)
+\end{equation}
+If the structure is symplectic, then the canonical coordinates $(q,p)$ may be expressed as functions of coordinates $u$ and the matrix of Lagrange Brackets
+\begin{equation}
+\left[u_{i}, u_{j}\right]_{p, q}   , 1 \leq i, j \leq 2 n
+\end{equation}
+We'll denote the Lagrange bracket matrix by $\sigma_{a b}$(changing the description from $p,q$ to $a,b$). The Lagrange Brackets matrix also follows an anti-symmetric condition and is the inverse of the Poisson bracket matrix. Thus,
+\begin{equation*}
+\sigma_{a b}=\left( \begin{array}{cc}{0} & {\frac{1}{\mu\left(x^{b}\right)}} \\ {-\frac{1}{\mu\left(x^{b}\right)}} & {0}\end{array}\right)
+\end{equation*}
+\begin{equation*}
+\sigma_{a b}=-\sigma_{b a}
+\end{equation*}
+and,
+\begin{equation}
+J^{a b} \sigma_{b c}=-\delta^{a}_{c}
+\label{67}
+\end{equation} 
+Now, Hamilton's equations can be written as
+\begin{equation}
+\dot{x}^{a}=J^{a b} \frac{\partial C_{1}}{\partial x^{b}}
+\label{68}
+\end{equation}
+Multiplying both sides by $\sigma_{c a}$ we get the Lagrangian form of Hamilton's equations:
+\begin{equation}
+\sigma_{c a} \dot{x}^{a}+\frac{\partial C_{1}}{\partial x^{c}}=0
+\label{69}
+\end{equation} 
+The Lagrangian $L(q,\dot{q})$ can be written as:
+\begin{equation}
+L= p\dot{q} - H
+\label{70}
+\end{equation}
+Now consider the Lagrangian $L=L\left(x^{a}, \dot{x}^{b}\right)$
+\begin{equation}
+L=L\left(x^{a}, \dot{x}^{b}\right)=l_{1}\left(x^{a}\right) \dot{x}^{1}-H
+\label{71}
+\end{equation}
+Since we made the choice $H=C_{1}(x^{b})$, therefore
+\begin{equation}
+L=L\left(x^{a}, \dot{x}^{b}\right)=l_{1}\left(x^{a}\right) \dot{x}^{1}-C_{1}\left(x^{a}\right)
+\label{72}
+\end{equation}
+where $l_{1}(x^{a})$ is defined by
+\begin{equation}
+\frac{\partial l_{1}}{\partial x^{2}}=\frac{1}{\mu}
+\label{73}
+\end{equation}
+Since $a$ and $b$ both take two values 1,2 we can write the Euler-Lagrange equations for \eqref{Eqsub}:
+\begin{equation}
+\frac{\partial l_{1}}{\partial x^{2}} \dot{x}^{2}+\frac{\partial C_{1}}{\partial x^{1}}=0 \label{74}
+\end{equation}
+and 
+\begin{equation}
+-\frac{\partial l_{1}}{\partial x^{2}} \dot{x}^{1}+\frac{\partial C_{1}}{\partial x^{2}}=0
+\label{75}
+\end{equation}
+These are equivalent to the Hamilton's equations \eqref{43}. the function $l_{1}(x^{a})$ is determined upto and addition of arbitrary function $f_{1}(x^{1})$. This modifies the Lagrangian \eqref{45} by a total time derivative, hence Euler-Lagrange equations \eqref{47} and \eqref{48} remain invariant under the change.
+
+\subsection{Dynamics of a general second order system}
+Consider a second order system defined as:
+\begin{equation}
+\ddot{q}=F(q) G(\dot{q})
+\label{76}
+\end{equation}
+This second-order equation can be written as two dimensional first order system.So we define:
+\begin{equation}
+x^{1} \equiv q \label{77}
+\end{equation}
+and,
+\begin{equation}
+x^{2} \equiv \dot{q} \label{78}
+\end{equation}
+The equations of motion can be written as:
+\begin{equation}
+\dot{x}^{1}=x^{2} \label{79}
+\end{equation}
+and,
+\begin{equation}
+\dot{x}^{2}=F\left(x^{1}\right) G\left(x^{2}\right) \label{80}
+\end{equation}
+Now, we've to find the time-independent constant of motion $C_{1}$. Therefore we have to write equation \eqref{Eqn} in the following form before integrating:
+\begin{equation}
+\frac{\ddot{q}}{G(\dot{q})}=F(q) \label{81}
+\end{equation}
+Integrating, we get
+\begin{equation}
+\int\frac{\ddot{q}}{G(\dot{q})}dq = \int F(q) d q + C_{1} \label{82}
+\end{equation}
+or,
+\begin{equation}
+\int\frac{\ddot{q}}{G(\dot{q})}\dot{q}dt = \int F(q) d q + C_{1}
+\end{equation}
+or,
+\begin{equation}
+\int\frac{\dot{q}}{G(\dot{q})}d\dot{q} = \int F(q) d q + C_{1}
+\end{equation}
+Hence, time-independent constant $C_{1}$ can be written as:
+\begin{equation}
+C_{1}(q, \dot{q})=-\int F(q) d q+\int \frac{\dot{q}}{G(\dot{q})} d \dot{q}
+\label{85}
+\end{equation}
+Therefore, the hamiltonian $H$ is given as:
+\begin{equation}
+H\left(x^{1}, x^{2}\right)=-\int F\left(x^{1}\right) d x^{1}+\int \frac{x^{2}}{G\left(x^{2}\right)} d x^{2}
+\end{equation}
+and the Poisson Bracket matrix can be written as 
+\begin{equation}
+J^{a b}=\left( \begin{array}{cc}{0} & {G\left(x^{2}\right)} \\ {-G\left(x^{2}\right)} & {0}\end{array}\right)
+\end{equation}
+The momentum $p$ can be written as:
+\begin{equation}
+\dot{p}=-\frac{\partial H}{\partial \dot{q}}
+\end{equation}
+hence momentum $p$ is given as
+\begin{equation}
+p=\int \frac{d x^{2}}{G\left(x^{2}\right)}
+\end{equation}
+Now consider the following functional form of $G(\dot{q})$:
+\begin{equation}
+G(\dot{q})=\dot{q}
+\end{equation}
+for this form, the time-independent constant, the Hamiltonian, and the canonical momentum take the following form:
+\begin{equation}
+C_{1}=-\int F(q) d q+\dot{q}
+\end{equation}
+\begin{equation}
+p=\int \frac{d \dot{q}}{\dot{q}}=\ln \dot{q}
+\end{equation}
+\begin{equation}
+H(q, p)=-\int F(q) d q+e^{p}
+\end{equation}
+We'll now apply the above approaches and results for obtaining the Lagrangian and Hamiltonian for the cosmological equations that we derived in chapter \ref{II}.
+\subsection{Lagrangian and Hamiltonian structure for the cosmological equations:}
+For writing the Lagrangian and Hamiltonian for cosmological equations, we consider a special state of matter called dust for which $P=0$. We'll be focusing our discussion on the flat universe model i.e. $k=0$ and as of the present discussion we will not consider cosmological constant. Hence taking into account the points, Friedmann equations take the following form:
+\begin{equation}
+\left(\frac{\dot{a}}{a}\right)^{2}=\frac{8 \pi G}{3 c^{2}} \rho
+\label{94}
+\end{equation}
+\begin{equation}
+2\frac{\ddot{a}}{a} + \left(\frac{\dot{a}}{a}\right)^{2} = 0
+\label{95}
+\end{equation}
+Now, substituting the value of $\left(\frac{\dot{a}}{a}\right)^{2}$ from \eqref{94} into \eqref{95} we get:
+\begin{equation}
+2\frac{\ddot{a}}{a} + \frac{8 \pi G}{3 c^{2}} \rho=0 \label{96}
+\end{equation}
+or,
+\begin{equation}
+\ddot{a}= -\left(\frac{4 \pi G}{3 c^{2}} \rho\right) a \label{97}
+\end{equation}
+From equation \eqref{20},
+\begin{equation}
+\frac{\dot{\rho}}{\rho} =-3 \frac{\dot{a}}{a^{2}} \label{98}
+\end{equation}
+Integrating both sides, we get
+\begin{equation}
+\rho = \frac{k_{1}}{a^{3}} \label{99}
+\end{equation}
+Substituting $\rho$ in \eqref{97}
+\begin{equation}
+\ddot{a}= -\left(\frac{4 \pi G}{3 c^{2} a^{2}} \right) k_{1} \label{100}
+\end{equation}
+Now, we find the time-independent constant for \eqref{100}. Choosing $x^{1}=a$ and $x^{2}=\dot{a}$ we can write the constant $C_{1}$ using \eqref{85} as:
+\begin{equation}
+C_{1}= -\left(\frac{4 \pi G}{3 c^{2} a} \right) k_{1} +\frac{\dot{a}^{2}}{2}
+\end{equation}
+Putting $k_{1}=\rho a^{3}$
+\begin{equation}
+C_{1}=-\left(\frac{4 \pi G}{3 c^{2} }\right) \rho a^{2} +\frac{\dot{a}^{2}}{2}
+\end{equation}
+Dividing throughout by $a^{2}$ and substituting the value of $\left(\frac{\dot{a}}{a}\right)^{2}$ from first Friedmann equation, we get:
+\begin{equation}
+C_{1}=0
+\end{equation}
+Hence, we use another constant $C_{1}'$ as:
+\begin{equation}
+C_{1}'= f(a,\dot{a}) C_{1}
+\end{equation}
+Now, differentiating $C_{1}'$ w.r.t time
+\begin{equation}
+\frac{dC_{1}'}{dt}= f'(a,\dot{a})\dot{a}C_{1} + f(a,\dot{a})\dot{C_{1}}=0
+\end{equation}
+Hence, we've seen that:
+\begin{enumerate}
+    \item $C_{1}$  is a constant of motion and hence can be taken as the Hamiltonian
+    \item The first Friedmann equation can be satisfied provided $C_{1}$ vanishes.
+    \item We can multiply $C_{1}$ by any function of $a$ and $\dot{a}$ to get a new constant $C_{1}'$(which can also be taken as the Hamiltonian) which satisfies both the cosmological equations.
+\end{enumerate}
+Now, the task that remains is to choose $f$. We'll choose the function $f(a,\dot{a})$ in such a way that the Hamiltonian whose role is played by $C_{1}$ is the linear combination of:
+\begin{enumerate}
+    \item Matter Hamiltonian$(\mathcal{H}_{m})$ - which depends on density $\rho$ or $k_{1}$
+    \item Gravitational Hamiltonian$(\mathcal{H}_{g})$ - which depends on $a$ and $\dot{a}$
+\end{enumerate}
+i.e
+\begin{equation}
+\mathcal{H}=\mathcal{H}_{g}+\mathcal{H}_{m}
+\end{equation}
+Therefore, we choose $f$ as:
+\begin{equation}
+f(a,\dot{a})=-\frac{3 c^{2}}{4 \pi G} a
+\end{equation}
+hence the Hamiltonian $\mathcal{H}$ can be written as:
+\begin{equation}
+\mathcal{H} = C_{1}' =f(a, \dot{a}) C_{1}= k_{1} - \frac{3 c^{2}}{8 \pi G} a \dot{a}^{2}
+\end{equation}
+Hence, $\mathcal{H}=\mathcal{H}_{g}+\mathcal{H}_{m}$ , where
+\begin{equation}
+\mathcal{H}_{m} = k_{1}=\rho a^{3}  ,   \mathcal{H}_{g} = -\frac{3 c^{2}}{8 \pi G} a \dot{a}^{2}
+\end{equation}\\
+Now, the Hamilton's equations are given as:
+\begin{equation}
+\frac{\partial \mathcal{H}}{\partial x^{2}} = \mu \dot{x^{1}}
+\end{equation}
+\begin{equation}
+\frac{\partial \mathcal{H}}{\partial x^{1}}=-\mu \dot{x^{2}}
+\end{equation}
+where $\mu \dot{x^{1}}= \dot{q}$(in our case $\dot{a}$) and $\mu \dot{x^{2}}= -\dot{p}$. Hence
+\begin{equation}
+\mu = -\frac{3 c^{2}}{4 \pi G} a
+\end{equation} 
+therefore,
+\begin{equation}
+p=-\frac{3 c^{2}}{4 \pi G} a \dot{a}
+\end{equation}
+Now, substituting $\dot{a}$ into $\mathcal{H}$, we get
+\begin{equation}
+\mathcal{H}=\mathcal{H}_{m} - \left(\frac{2 \pi G}{3 c^{2} a}\right) p^{2}
+\end{equation}
+This is our final expression for Hamiltonian. Now, Lagrangian is given as :
+\begin{equation}
+\mathcal{L} = p\dot{q} - \mathcal{H}= p \frac{\partial \mathcal{H}}{\partial x^{2}} - \mathcal{H}
+\end{equation}
+Therefore,
+\begin{equation}
+\mathcal{L} = -\mathcal{H}_{m} + \frac{3 c^{2} a \dot{a}^{2}}{8 \pi G}
+\end{equation}
+This is our final expression for Lagrangian. We can verify through Hamilton's equations that the Hamiltonian given here gives back the cosmological equations we started with. Hence the functional form of our Hamiltonian is correct.
+
+\section*{Constructing Lagrangian using the method of Jacobi's Last Multiplier(JLM)}\label{IV}
+
+In this section, we're going to discuss the link between Jacobi's last Multiplier(JLM) \cite{Nucci_2008} and the Lagrangian of a second-order system \cite{D’ambrosi2021}. We know that for any second-order differential equation, there always exists a Lagrangian. But it is also that if we have the knowledge of a Jacobi Last Multiplier, we can always find the Lagrangian for that system. Also, the Multiplier provides a straightforward and easy method to derive the Lagrangian whereas if one follows the standard procedure, one has to face a lengthy procedure to obtain a Lagrangian(and the corresponding Hamiltonian).
+Many second-order ODEs) of the form $\ddot{x}=F(t,x,\dot{x})$ admit a Lagrangian description because of the existence of Jacobi Last Multiplier. Jacobi presented a series of lectures on dynamics in Berlin during 1847. Of the 38 lectures, three were devoted to what he termed an \textit{\textbf{‘un nouveau principe de la mécanique analytique’}}, which suggests that Jacobi thought that this was an important development in the subject of Classical Mechanics \cite{sinkevich_karl_weierstrass_bicentenary}. 
+Jacobi's Last Multiplier is a solution of the linear partial differential equation,\cite{2008PhyS...78f5011N}
+\begin{equation}
+\frac{\mathrm{d} \log M}{\mathrm{d} t}+\sum_{i=1}^{n} \frac{\partial\left(a_{i}\right)}{\partial x_{i}}=0
+\end{equation}
+where $\partial_{t}+\sum_{i=1}^{n} a_{i} \partial_{x_{I}}$ is the vector field of the partial differential equation
+\begin{equation}
+A f=\frac{\partial f}{\partial t}+\sum_{i=1}^{n} a_{i}\left(x_{1}, \ldots, x_{n}\right) \frac{\partial f}{\partial x_{i}}=0
+\end{equation}
+or it's equivalent associated Lagrange system
+\begin{equation}
+\frac{\mathrm{d} x_{1}}{a_{1}}=\frac{\mathrm{d} x_{2}}{a_{2}}=\ldots=\frac{\mathrm{d} x_{n}}{a_{n}}=\frac{\mathrm{d} t}{1}
+\end{equation}
+An important property of the Last Multiplier is that the ratio of two multipliers say $M/M'$, is a solution of \eqref{68} \cite{2008PhyS...78f5011N}, or equally a first integral of \eqref{69}. Every multiplier M is a solution of the linear partial differential equation
+\begin{equation}
+\frac{\partial\left(M a_{1}\right)}{\partial x_{1}}+\frac{\partial\left(M a_{2}\right)}{\partial x_{2}}+\cdots+\frac{\partial\left(M a_{n}\right)}{\partial x_{n}}=0
+\end{equation} 
+or it's equivalent,
+\begin{equation}
+\sum_{i=1}^{n} a_{i} \frac{\partial(\log M)}{\partial x_{i}}+\sum_{i=1}^{n} \frac{\partial a_{i}}{\partial x_{i}}=0
+\end{equation}
+Conversely, every solution $M$ of this equation is a Jacobi Last Multiplier[JLM].
+\subsection{From JLM to Lagrangian:}
+We now present the link between the Lagrangian and Jacobi Last Multiplier for the second order ordinary differential equation \cite{D’ambrosi2021}.\\ 
+Consider a second-order system:
+\begin{equation}
+\ddot{y}=F(t, y, \dot{y}) \label{122}
+\end{equation} 
+From equation \eqref{67}, we can write
+\begin{equation}
+\frac{d}{d t}(\log M)+\frac{\partial F}{\partial \dot{y}}=0 \label{123}
+\end{equation}
+or,
+\begin{equation}
+M=\exp \left[-\int \frac{\partial F}{\partial \dot{y}} d t\right] \label{124}
+\end{equation}
+The relation between the \textbf{Lagrangian} and \textbf{Jacobi Last Multiplier} is:
+\begin{equation}
+\frac{\partial^{2} L}{\partial \dot{x}^{2}}=M \label{125}
+\end{equation}
+which in our case can be written as
+\begin{equation}
+M=\frac{\partial^{2} L}{\partial \dot{y}^{2}} \label{126}
+\end{equation}
+where $L=L(t,y,\dot{y})$ is the Lagrangian sought. This means that if know one Last Multiplier $M$, then we can obtain $L$ by two successive integrations:
+\begin{equation}
+L=\int\left(\int M d \dot{y}\right) d \dot{y}+f_{1}(t, y) \dot{y}+f_{2}(t, y) \label{127}
+\end{equation}
+where $f_{1}$ and $f_{2}$ are arbitrary functions(constants of integration). Given that Lagrangians that vary only by a total derivative concerning time with respect to a differentiable function lead to identical equations, we have the option to establish equivalence classes among Lagrangians. These classes differ only by the total derivative of an arbitrary function, which is referred to as a gauge function, as discussed in \cite{D’ambrosi2021}. Consequently, we can select a gauge function $g(t, y)$ such that:
+\begin{equation}
+f_{1}=\frac{\partial g}{\partial y} \label{128}
+\end{equation}
+\begin{equation}
+f_{2}=\frac{\partial g}{\partial t}+f_{3}(t, y) \label{129}
+\end{equation}
+Rewriting the Lagrangian in terms of gauge function,
+\begin{equation} 
+L=\int\left(\int M d \dot{y}\right) d \dot{y}+\frac{d g}{d t}+f_{3} \label{130}
+\end{equation}
+Now, $g$ is an arbitrary gauge function but the equation \eqref{72} is derivable by the above Lagrangian and therefore the Euler-Lagrange equation must give the second-order differential equation we started with. This means $f_{3}$ is not arbitrary, but it has to satisfy the Euler-Lagrange equation:
+\begin{equation}
+-\frac{d}{d t}\left(\frac{\partial L}{\partial \dot{y}}\right)+\frac{\partial L}{\partial y}=0 \label{131}
+\end{equation}
+We now consider the following general form of equation of {Painleve type} \cite{encyclopedia_of_math_painleve_equations} and  find its Lagrangian using the above method:
+\begin{equation}
+\ddot{y}+A(y) \dot{y}^{2}+B(t, y) \dot{y}+C(t, y)=0 \label{132}
+\end{equation}
+Now, from equation \eqref{73} we can write,
+\begin{equation}
+\frac{d}{d t}(\log M)-2 A(y) \dot{y}-B(t, y)=0 \label{133}
+\end{equation}
+solving for multiplier $M$, we get
+\begin{equation}
+M=\exp \left[\int(2 A(y) \dot{y}+B(t, y)) d t\right] \label{134}
+\end{equation}   
+Now we will consider different cases for different forms of $\ddot{y}$ :
+\begin{enumerate}
+    \item $\ddot{y}=0$ \\
+    In this case ,
+\begin{equation}
+\frac{d}{d t}(\log M)=0 \label{135}
+\end{equation}
+So, now we take M=1 and therefore Lagrangian comes out to be
+\begin{equation}
+L=\frac{\dot{y}^{2}}{2}+\frac{d g}{d t} \label{136}
+\end{equation}
+     \item $\ddot{y}=\frac{\dot{y}^{2}}{y}$\\
+     In this case,
+\begin{equation}
+\frac{d}{d t}(\log M)+\frac{2 \dot{y}}{y}=0
+\end{equation}
+therefore, 
+\begin{equation}
+-\log M=\int 2 \frac{\dot{y}}{y} d t=\int 2 \frac{d y}{y}=2 \log y
+\end{equation}
+hence,
+\begin{equation}
+M=1 / y^{2}
+\end{equation}
+and
+\begin{equation}
+L=\frac{\dot{y}^{2}}{2 y^{2}}+\frac{d g}{d t}
+\end{equation}
+\end{enumerate}
+We'll now apply the above procedure for finding the Multiplier and hence the Lagrangian for cosmological equations.\\
+Comparing the second Friedman equation \eqref{95} with equation \eqref{132}, we get,
+\begin{equation}
+A=\frac{1}{2 a} , B=0, C=0
+\end{equation}
+Now,form equation \eqref{134}, we can calculate the multiplier M, which comes out be $a$, hence
+\begin{equation}
+M=a
+\end{equation}
+therefore using equation \eqref{130} to calulate the Lagrangian,
+\begin{equation}
+\mathcal{L}_{1} = \frac{a \dot{a}^{2}}{2} 
+\end{equation}
+which can also be written as :
+\begin{equation}
+\mathcal{L}_{1}=C_{1}\frac{a \dot{a}^{2}}{2}
+\end{equation}
+Since our Lagrangian has a gauge freedom we can add any constant to it say $\mathcal{L}_{2}$. Therefore, we choose $\mathcal{L}_{2}$ as:=
+\begin{equation}
+\mathcal{L}_{2} = \mathcal{H}_{m}
+\end{equation}
+so,
+\begin{equation}
+\mathcal{L}= C_{1} \frac{a \dot{a}^{2}}{2} + \mathcal{L}_{2}
+\end{equation}
+Now, $\mathcal{H}$ can be found using Legendre transformation:
+\begin{equation}
+\mathcal{H} = \mathcal{H}_{m} - C_{1} \frac{a \dot{a}^{2}}{2}
+\end{equation}
+As before the Hamiltonian $\mathcal{H}$ should vanish. Therefore,
+\begin{equation}
+\mathcal{H}_{m} = C_{1} \frac{a \dot{a}^{2}}{2}
+\end{equation} 
+Dividing both sides by $a^{3}$ and substituting for $\left(\frac{\dot{a}}{a}\right)^{2}$ from Friedmann equation, we get the value of the constant $C_{1}$
+\begin{equation}
+C_{1} = \frac{3 c^{2}}{4 \pi G}
+\end{equation}
+hence, 
+\begin{equation}
+\mathcal{L}= \frac{3 c^{2}}{8 \pi G} a \dot{a}^{2} - \mathcal{H}_{m}
+\end{equation}
+which is exactly the same Lagrangian we obtained in the previous section.
+
+\section{Conclusions}\label{Con}
+Through our analysis, we successfully derived the Lagrangian and Hamiltonian structures for the cosmological equations using two entirely distinct and independent methods. Remarkably, we found that the results obtained from both methods were identical.
+In the first approach, we leveraged a time-independent constant of motion to first determine the Hamiltonian and subsequently the Lagrangian. On the other hand, in the second approach, we employed a more straightforward and efficient technique known as Jacobi's Last Multiplier to directly find the Lagrangian. One notable finding was that the Lagrangian we obtained exhibited gauge freedom. This means that we can add any constant value to it without altering the functional form of the Hamiltonian or any other quantities derived from the Lagrangian.
+To validate the consistency of our results, we performed reverse calculations and confirmed that the Lagrangian and Hamiltonian we derived indeed produced the same cosmological equations we initially started with.
+
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{ref}
+
+\end{document}
